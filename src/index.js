@@ -1,10 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { Buffer } from "buffer";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+window.global = window;
+global.Buffer = Buffer;
+global.process = {
+  env: { DEBUG: undefined },
+  version: "",
+  nextTick: require("next-tick"),
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
