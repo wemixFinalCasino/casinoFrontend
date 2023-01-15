@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 const Enter = () => {
     const navigate = useNavigate();
-
     const changeNetwork = async () => {
         return await window.ethereum.request({
                 method: 'wallet_addEthereumChain',
