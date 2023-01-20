@@ -5,7 +5,7 @@ import axios from "axios";
 const MyWallet = () => {
     const [account, setAccount] = useState("");
     const [balance, setBalance] = useState(0);
-
+    const [token, setToken] = useState(0);
     const getAccount = async () => {
         return await window.ethereum.request({ method: 'eth_requestAccounts' });
     } 
@@ -44,7 +44,7 @@ const MyWallet = () => {
     // })
     return (
         <>
-        <h5>{account}<br></br>{balance} WIMIX</h5>
+        <h5>{account}<br></br>{balance} WIMIX</h5><br>{token} TOKEN</br>
         </>
     )
 };
